@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,90 +79,12 @@
         @keyframes slideUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
         @keyframes shimmer { 0%{left:-100%} 100%{left:200%} }
 
-        /* ===== AGE GATE ===== */
-        #age-quiz {
-            display: flex; align-items: center; justify-content: center;
-            min-height: 100vh; padding: 40px 20px; position: relative; z-index: 1;
-        }
-        .quiz-wrap { max-width: 420px; width: 100%; text-align: center; }
-
-        .quiz-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--surface); border: 1px solid var(--border-green);
-            border-radius: 100px; padding: 8px 18px 8px 10px; margin-bottom: 28px;
-            animation: slideUp 0.4s ease-out both;
-        }
-        .quiz-badge img { width: 28px; height: 28px; border-radius: 8px; }
-        .quiz-badge span { font-size: 13px; font-weight: 600; color: var(--green); letter-spacing: 0.3px; }
-
-        .quiz-heading {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: clamp(38px, 10vw, 56px); font-weight: 800; line-height: 1.05;
-            margin-bottom: 16px; animation: slideUp 0.5s ease-out 0.1s both;
-        }
-        .quiz-heading .accent {
-            background: linear-gradient(135deg, var(--green) 0%, var(--green-bright) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .quiz-sub {
-            font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 36px;
-            animation: slideUp 0.5s ease-out 0.15s both; max-width: 340px; margin-left: auto; margin-right: auto;
-        }
-        .live-counter {
-            display: inline-flex; align-items: center; gap: 12px;
-            background: linear-gradient(135deg, rgba(167,139,250,0.18) 0%, rgba(167,139,250,0.08) 100%);
-            border: 1px solid rgba(167,139,250,0.4);
-            border-radius: 14px; padding: 14px 22px; margin-bottom: 32px;
-            box-shadow: 0 0 28px rgba(167,139,250,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
-            animation: slideUp 0.5s ease-out 0.2s both, livePulse 2.4s ease-in-out infinite;
-        }
-        @keyframes livePulse {
-            0%,100% { box-shadow: 0 0 28px rgba(167,139,250,0.2), inset 0 1px 0 rgba(255,255,255,0.05); }
-            50% { box-shadow: 0 0 40px rgba(167,139,250,0.4), inset 0 1px 0 rgba(255,255,255,0.05); }
-        }
-        .live-dot {
-            width: 10px; height: 10px; background: var(--green); border-radius: 50%;
-            box-shadow: 0 0 12px var(--green), 0 0 20px rgba(167,139,250,0.5);
-            animation: blink 1.5s ease-in-out infinite; flex-shrink: 0;
-        }
-        @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.85)} }
-        .live-counter span { font-size: 15px; color: var(--text); font-weight: 600; letter-spacing: 0.1px; }
-        .live-counter span .live-num {
-            font-size: 18px; font-weight: 800;
-            background: linear-gradient(135deg, var(--green) 0%, var(--green-bright) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            font-variant-numeric: tabular-nums; margin-right: 4px;
-        }
-
-        .age-options { display: flex; flex-direction: column; gap: 12px; animation: slideUp 0.5s ease-out 0.25s both; }
-        .age-btn {
-            display: block; text-decoration: none; border: none; border-radius: var(--radius);
-            padding: 22px 24px; cursor: pointer; position: relative; overflow: hidden;
-            transition: all 0.25s ease; text-align: center;
-        }
-        .age-btn.primary {
-            background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
-            box-shadow: 0 8px 32px rgba(167,139,250,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
-        }
-        .age-btn.primary .age-label { color: #fff; }
-        .age-btn.primary .age-desc { color: rgba(255,255,255,0.75); }
-        .age-btn.primary:active { transform: scale(0.97); }
-        .age-btn.secondary { background: var(--surface); border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
-        .age-btn.secondary:active { transform: scale(0.97); border-color: var(--border-green); }
-        .age-label { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-        .age-desc { font-size: 12px; color: var(--muted); font-weight: 500; }
-        .age-btn.primary::after {
-            content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
         /* ===== MAIN CONTENT ===== */
         .scroll-content { display: none; opacity: 0; }
         .scroll-content.active { display: block; animation: fadeIn 0.5s ease-out forwards; }
 
         .main-wrap {
-            max-width: 440px; margin: 0 auto; padding: 100px 20px 120px;
+            max-width: 440px; margin: 0 auto; padding: 48px 20px 120px;
             position: relative; z-index: 1;
         }
 
@@ -172,16 +95,6 @@
         }
         .logo-pill img { width: 100%; height: 100%; object-fit: cover; }
         .logo-x { font-size: 22px; font-weight: 800; color: var(--muted); opacity: 0.5; }
-
-        /* Countdown timer */
-        .countdown-bar {
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-            background: rgba(254,44,85,0.08); border: 1px solid rgba(254,44,85,0.2);
-            border-radius: 10px; padding: 10px 16px; margin-bottom: 20px;
-        }
-        .countdown-bar svg { width: 14px; height: 14px; color: #fe2c55; flex-shrink: 0; }
-        .countdown-bar span { font-size: 13px; color: #ff6b8a; font-weight: 600; }
-        .countdown-bar .timer { font-variant-numeric: tabular-nums; color: #fe2c55; font-weight: 700; }
 
         .status-pill {
             display: inline-flex; align-items: center; gap: 8px;
@@ -335,16 +248,13 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 480px) {
-            #age-quiz { padding: 32px 16px; }
-            .quiz-heading { font-size: clamp(34px, 9vw, 48px); }
-            .main-wrap { padding: 90px 16px 120px; }
+            .main-wrap { padding: 40px 16px 120px; }
             .logo-pill { width: 48px; height: 48px; border-radius: 14px; }
             .main-heading { font-size: clamp(28px, 7.5vw, 38px); }
             .cta { padding: 18px; font-size: 15px; border-radius: 16px; }
             .step-item { padding: 16px; }
         }
         @media (max-width: 375px) {
-            .quiz-heading { font-size: 32px; }
             .main-heading { font-size: 26px; }
             .logo-pill { width: 44px; height: 44px; border-radius: 12px; }
             .cta { padding: 16px; font-size: 14px; }
@@ -364,7 +274,6 @@
             .sticky-cta .cta-sm { padding: 14px 16px; font-size: 14px; }
         }
         @media (max-height: 500px) and (orientation: landscape) {
-            #age-quiz { min-height: auto; padding: 20px 24px; }
             .main-wrap { padding: 20px 24px 100px; }
         }
         @media (hover: none) and (pointer: coarse) {
@@ -380,32 +289,6 @@
     <div class="ambient"></div>
     <div class="noise"></div>
 
-    <!-- ===== AGE GATE ===== -->
-    <div id="age-quiz">
-        <div class="quiz-wrap">
-            <div class="quiz-badge slide-up">
-                <img src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful">
-                <span>Playful Rewards</span>
-            </div>
-            <h1 class="quiz-heading slide-up">Get Paid to<br><span class="accent">Play Games</span></h1>
-            <p class="quiz-sub">Thousands earn real cash daily playing Subway Surfers, Coin Master, Solitaire Cash &amp; more &#8212; instant payouts.</p>
-            <div class="live-counter">
-                <div class="live-dot"></div>
-                <span><span class="live-num" id="liveCount">12,863</span>people earning right now</span>
-            </div>
-            <div class="age-options">
-                <a class="age-btn primary" id="opt21" href="#">
-                    <div class="age-label">I'm 21 or older</div>
-                    <div class="age-desc">Full access &#8212; PayPal, CashApp, Venmo, Crypto</div>
-                </a>
-                <a class="age-btn secondary" id="opt18" href="#">
-                    <div class="age-label">I'm under 21</div>
-                    <div class="age-desc">Limited access &#8212; Wire transfer only</div>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- ===== NOTIFICATION TOAST ZONE ===== -->
     <div class="notif-zone" id="notifZone"></div>
 
@@ -414,12 +297,6 @@
         <div class="main-wrap">
             <div class="logo-row">
                 <div class="logo-pill"><img src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs" alt="Playful"></div>
-            </div>
-
-            <!-- Countdown timer -->
-            <div class="countdown-bar">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>Bonus expires in <span class="timer" id="countdown">14:59</span></span>
             </div>
 
             <h2 class="main-heading">Earn Real Cash<br><span class="g">Playing Games</span></h2>
@@ -503,26 +380,6 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // ===== LIVE COUNTER =====
-        var baseCount = 12863;
-        setInterval(function() {
-            baseCount += Math.floor(Math.random() * 5) - 1;
-            if (baseCount < 12500) baseCount = 12500;
-            document.getElementById('liveCount').textContent = baseCount.toLocaleString();
-        }, 4000);
-
-        // ===== COUNTDOWN TIMER =====
-        var countdownSeconds = 14 * 60 + 59;
-        var countdownEl = document.getElementById('countdown');
-        function updateCountdown() {
-            if (countdownSeconds <= 0) return;
-            countdownSeconds--;
-            var m = Math.floor(countdownSeconds / 60);
-            var s = countdownSeconds % 60;
-            countdownEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
-        }
-        var countdownInterval = null;
-
         // ===== DOLLAR COUNTER =====
         var dollarBase = 2847300;
         var dollarEl = document.getElementById('dollarCount');
@@ -616,18 +473,6 @@
             }
         }
 
-        // Age gate → main content
-        document.getElementById('opt21').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('age-quiz').style.display = 'none';
-            showContent('https://max.mcpqclick.com/click');
-        });
-        document.getElementById('opt18').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('age-quiz').style.display = 'none';
-            showContent('https://max.mcpqclick.com/click');
-        });
-
         function showContent(ctaUrl) {
             document.querySelectorAll('.trxbutton').forEach(function(btn) {
                 btn.setAttribute('href', ctaUrl);
@@ -637,12 +482,14 @@
             window.scrollTo(0, 0);
 
             startNotifs();
-            countdownInterval = setInterval(updateCountdown, 1000);
             dollarInterval = setInterval(updateDollar, 3000);
 
             mainCta = document.querySelector('#fc-content .cta.trxbutton');
             window.addEventListener('scroll', handleStickyScroll, { passive: true });
         }
+
+        // Show main content directly (no age gate)
+        showContent('https://max.mcpqclick.com/click');
 
         // CTA click handler
         var clicked = false;
